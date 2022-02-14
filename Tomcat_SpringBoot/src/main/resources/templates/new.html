@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Create New Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+    <style type="text/css">
+        body{
+            background-color: #aa0505;
+        }
+        hr.new1{
+            border-top: 3px solid black;
+        }
+    </style>
+
+</head>
+<body>
+<font color="#fffafa">
+<div align="center">
+    <br>
+    <h1><b>Book Your Show</b></h1>
+    <br />
+    <hr class="new1">
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+
+
+            <div alight="left">
+                <br>
+                <tr>
+                    <label class="form-label" >Customer Name</label>
+                    <td>
+                        <input type="hidden" th:field="*{id}" />
+                        <input type="text" th:field="*{name}" class="form-control" placeholder="Customer Name" />
+                    </td>
+                </tr>
+            </div>
+
+            <div alight="left">
+
+                <tr>
+                    <br>
+                    <label class="form-label" >Place</label>
+                    <td><input type="text" th:field="*{place}" class="form-control" placeholder="Place" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <br>
+                    <label class="form-label" >No of Seats</label>
+                    <td><input type="text" th:field="*{no_of_seats}" class="form-control" placeholder="seats" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <br>
+                    <label class="form-label" >Amount</label>
+                    <td><input type="text" th:field="*{amount}" class="form-control" placeholder="amount" /></td>
+                </tr>
+            </div>
+            <br>
+            <tr>
+                <br>
+                <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</font>
+</body>
+</html>

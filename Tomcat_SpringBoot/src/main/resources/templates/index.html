@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+    <style type="text/css">
+        body{
+            background-color: #9cf49d;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <br>
+    <br>
+    <h2 ><center><font color="#00008b" size="20"> <b>VISUAL THEATRE</b></font></center></h2>
+    <hr>
+    <br>
+    <tr>
+        <div align = "center" >
+            <h3><a  th:href="@{'/new'}">BOOK YOUR SHOW</a></h3>
+        </div>
+    </tr>
+    <br>
+    <br>
+    <center>
+    <tr>
+        <div class="col-sm-5" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table" bgcolor="#fffafa">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Movie ID</th>
+                        <th>Customer Name</th>
+                        <th>Customer Place</th>
+                        <th>Number of Seats</th>
+                        <th>Amount</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="student : ${liststudent}">
+                        <td th:text="${student.id}">Customer ID</td>
+                        <td th:text="${student.name}">Customer Name</td>
+                        <td th:text="${student.place}">Place</td>
+                        <td th:text="${student.no_of_seats}">Number of Seats</td>
+                        <td th:text="${student.amount}">Amount</td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${student.id}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${student.id}}">Delete</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+    </center>
+    </div>
+    </table>
+    </div>
+</body>
+</html>
